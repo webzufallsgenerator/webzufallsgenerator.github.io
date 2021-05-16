@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/webzufallsgenerator.github.io/static/css/main.e56de7ee.chunk.css",
+    "main.js": "/webzufallsgenerator.github.io/static/js/main.3769014d.chunk.js",
+    "main.js.map": "/webzufallsgenerator.github.io/static/js/main.3769014d.chunk.js.map",
+    "runtime-main.js": "/webzufallsgenerator.github.io/static/js/runtime-main.a4b8b7ad.js",
+    "runtime-main.js.map": "/webzufallsgenerator.github.io/static/js/runtime-main.a4b8b7ad.js.map",
+    "static/js/2.24f28522.chunk.js": "/webzufallsgenerator.github.io/static/js/2.24f28522.chunk.js",
+    "static/js/2.24f28522.chunk.js.map": "/webzufallsgenerator.github.io/static/js/2.24f28522.chunk.js.map",
+    "static/js/3.f0a88f70.chunk.js": "/webzufallsgenerator.github.io/static/js/3.f0a88f70.chunk.js",
+    "static/js/3.f0a88f70.chunk.js.map": "/webzufallsgenerator.github.io/static/js/3.f0a88f70.chunk.js.map",
+    "index.html": "/webzufallsgenerator.github.io/index.html",
+    "static/css/main.e56de7ee.chunk.css.map": "/webzufallsgenerator.github.io/static/css/main.e56de7ee.chunk.css.map",
+    "static/js/2.24f28522.chunk.js.LICENSE.txt": "/webzufallsgenerator.github.io/static/js/2.24f28522.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4b8b7ad.js",
+    "static/js/2.24f28522.chunk.js",
+    "static/css/main.e56de7ee.chunk.css",
+    "static/js/main.3769014d.chunk.js"
+  ]
+}
