@@ -53,13 +53,17 @@ class RandomPicker extends Component {
     }
     
     return(
-        <div>
+        <div >
+            <h1>Random Picker</h1>
+            <h3>Enter all the names or items and pick a random one!</h3>
+            <h4>Press enter after every entry!</h4>
             <Form 
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 data={this.state}
             />
-            <p>Randomly picked was: {randomName}</p>
+            <p style = {{marginBottom: 0}}>Randomly picked was:</p>
+            <b style = {{marginTop: 0}}>{randomName}</b>
         </div>
     )
   }

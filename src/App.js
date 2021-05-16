@@ -11,10 +11,10 @@ const drawerWidth = 240
   const useStyles = makeStyles((theme) => ({
     content: {
         [theme.breakpoints.up('sm')]: {
-            marginLeft: drawerWidth
+            marginLeft: drawerWidth + 40
         },
         flexShrink: 0,
-        padding: 20
+        padding: 50
     // padding: theme.spacing(3),
     },
   }));
