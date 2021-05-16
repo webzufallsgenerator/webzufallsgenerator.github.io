@@ -3,6 +3,7 @@ import '../App.css'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import { ArrowForwardIos } from '@material-ui/icons';
+import { withRouter } from 'react-router-dom'
 
 
 function Form(props) {
@@ -32,4 +33,4 @@ function Form(props) {
     )
 }
 
-export default Form
+export default withRouter(Form)
