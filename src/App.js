@@ -28,13 +28,15 @@ function App() {
       <div className="App">
         <header className="App-header">
           <ResponsiveDrawer />
-          
           <div className={classes.content}>
             <Switch>
               <Route exact path={process.env.PUBLIC_URL + "/"}>
                 <Home />
               </Route>
               <Route exact path={process.env.PUBLIC_URL + "/generators/picker"}>
+                <RandomPicker />
+              </Route> 
+              <Route exact path={process.env.PUBLIC_URL + "/generators/picker?"}>
                 <RandomPicker />
               </Route> 
             </Switch>
