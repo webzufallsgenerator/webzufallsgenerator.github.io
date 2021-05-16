@@ -2,9 +2,17 @@ import { Button } from '@material-ui/core'
 import { ArrowForwardIos } from '@material-ui/icons'
 import React from 'react'
 import MetaTags from 'react-meta-tags'
+import { withRouter } from 'react-router-dom'
 
-function Home() {
+function Home(props) {
+    const { history } = props
 
+    function handleClick() {
+        history.push('/generators/picker')
+    }
+        
+        
+        
     
 
     return(
@@ -16,7 +24,7 @@ function Home() {
                 <div>
                     <h1>random-now.com</h1>
                     <h3>Welcome to random-now.com! Select a random generator and get started now!</h3>
-                    <Button variant="contained" size="large" color="primary" href="/generators/picker" endIcon={<ArrowForwardIos />}>
+                    <Button variant="contained" size="large" color="primary" onClick={handleClick} endIcon={<ArrowForwardIos />}>
                         Random Picker
                     </Button>
                     <br />
@@ -28,4 +36,4 @@ function Home() {
     )
 }
 
-export default Home
+export default withRouter(Home)
