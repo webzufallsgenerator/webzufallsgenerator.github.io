@@ -24,16 +24,16 @@ function App() {
   const classes = useStyles();
 
   return(
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <header className="App-header">
           <ResponsiveDrawer />
           <div className={classes.content}>
             <Switch>
-              <Route exact path="/">
+              <Route exact path={process.env.PUBLIC_URL + "/"}>
                 <Home />
               </Route>
-              <Route exact path="/generators/picker">
+              <Route exact path={process.env.PUBLIC_URL + "/generators/picker"}>
                 <RandomPicker />
               </Route> 
               
