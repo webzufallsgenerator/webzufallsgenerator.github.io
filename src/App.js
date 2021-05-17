@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Route, HashRouter as Router } from 'react-router-dom'
 import Home from './components/Home'
 import ResponsiveDrawer from './components/ResponsiveDrawer';
 import RandomPicker from './components/RandomPicker';
@@ -30,15 +30,13 @@ function App() {
           <ResponsiveDrawer />
           <div className={classes.content}>
             <Switch>
-              <Route exact path={process.env.PUBLIC_URL + "/"}>
+              <Route exact path="/">
                 <Home />
               </Route>
-              <Route exact path={process.env.PUBLIC_URL + "/generators/picker"}>
+              <Route exact path="/generators/picker">
                 <RandomPicker />
               </Route> 
-              <Route exact path={process.env.PUBLIC_URL + "/generators/picker?"}>
-                <RandomPicker />
-              </Route> 
+              
             </Switch>
           </div>  
         </header> 
