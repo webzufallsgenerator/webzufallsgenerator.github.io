@@ -1,6 +1,7 @@
 import '../App.css';
 import { Component } from 'react';
 import Form from './Form'
+import { useHistory } from 'react-router'
 
 
 
@@ -24,13 +25,20 @@ class RandomPicker extends Component {
     console.log(this.state.names)
   }
   
+  
+
   handleSubmit() {
     var names = this.state.names.split("\n")
     console.log(names)
     var randomName = names[Math.floor(Math.random()*names.length)]
     localStorage.setItem('randomName', randomName)
     localStorage.setItem('names', JSON.stringify(names))
-  }
+    console.log(localStorage.getItem("randomName"))
+    window.location.reload()
+    this.setState({
+      random_generated: randomName
+    })
+    }
 
   componentDidMount() {
     if (localStorage.getItem("names") != null) {
@@ -63,7 +71,7 @@ class RandomPicker extends Component {
                 data={this.state}
             />
             <p style = {{marginBottom: 0}}>Randomly picked was:</p>
-            <b style = {{marginTop: 0}}>{randomName}</b>
+            <b style = {{marginTop: 0}}>{this.state.random_generated}</b>
         </div>
     )
   }
