@@ -50,8 +50,11 @@ class RandomPicker extends Component {
   }
 
   render() {
-    var randomName = this.state.random_generated
-    
+    if (this.state.random_generated !== localStorage.getItem("randomName")) {
+      var randomName = localStorage.getItem("randomName")
+    } else {
+      randomName = this.state.random_generated
+    }
 
     if (randomName != null && randomName !== "") {
       var randomResult = (
