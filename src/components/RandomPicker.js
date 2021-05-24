@@ -1,7 +1,6 @@
 import '../App.css';
 import { Component } from 'react';
 import Form from './Form'
-import { useHistory } from 'react-router'
 
 
 
@@ -11,29 +10,30 @@ class RandomPicker extends Component {
     super(props)
     this.state = {
       names: '',
-      random_generated: [],
+      random_generated: null,
     }
     
     this.handleChange=this.handleChange.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this)
+    this.clearForm=this.clearForm.bind(this)
   }
     
   handleChange(event) {
     this.setState({
       names: event.target.value
     })
-    console.log(this.state.names)
   }
   
-  
+  clearForm() {
+    localStorage.clear()
+    window.location.reload()
+  }
 
   handleSubmit() {
     var names = this.state.names.split("\n")
-    console.log(names)
     var randomName = names[Math.floor(Math.random()*names.length)]
     localStorage.setItem('randomName', randomName)
     localStorage.setItem('names', JSON.stringify(names))
-    console.log(localStorage.getItem("randomName"))
     window.location.reload()
     this.setState({
       random_generated: randomName
@@ -50,15 +50,33 @@ class RandomPicker extends Component {
   }
 
   render() {
-    if (localStorage.getItem("randomName") != null) {
+    var randomName = this.state.random_generated
+    
+
+    if (randomName != null && randomName !== "") {
+      var randomResult = (
+        <div>
+          <p style = {{marginBottom: 0}}>Randomly picked was:</p>
+          <b style = {{marginTop: 0}}>{randomName}</b>
+        </div>
+      ) 
+    } else {
+      randomResult = null
+    }
+     
+
+    /*
+     if (localStorage.getItem("randomName") != null) {
       var randomName = localStorage.getItem("randomName")
-      /*
+      
+      
       var names = JSON.parse(localStorage.getItem("names"));
       var nameList = names.map((name, index) => 
       <li key={index}>
           {name}
-      </li>) */
+      </li>) 
     }
+    */
     
     return(
         <div >
@@ -68,10 +86,13 @@ class RandomPicker extends Component {
             <Form 
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
+                handleClick={this.clearForm}
                 data={this.state}
             />
-            <p style = {{marginBottom: 0}}>Randomly picked was:</p>
-            <b style = {{marginTop: 0}}>{this.state.random_generated}</b>
+
+            {randomResult}
+
+            
         </div>
     )
   }

@@ -4,6 +4,7 @@ import Home from './components/Home'
 import ResponsiveDrawer from './components/ResponsiveDrawer';
 import RandomPicker from './components/RandomPicker';
 import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 
 const drawerWidth = 240
@@ -24,24 +25,28 @@ function App() {
   const classes = useStyles();
 
   return(
-    <Router basename={process.env.PUBLIC_URL}>
-      <div className="App">
-        <header className="App-header">
-          <ResponsiveDrawer />
-          <div className={classes.content}>
-            <Switch>
-              <Route exact path={process.env.PUBLIC_URL + "/"}>
-                <Home />
-              </Route>
-              <Route exact path={process.env.PUBLIC_URL + "/generators/picker"}>
-                <RandomPicker />
-              </Route> 
-              
-            </Switch>
-          </div>  
-        </header> 
-      </div>
-    </Router>
+    <React.StrictMode>
+          <Router basename={process.env.PUBLIC_URL}>
+            <div className="App">
+              <header className="App-header">
+                <ResponsiveDrawer />
+                <div className={classes.content}>
+                  <Switch>
+                    <Route exact path={process.env.PUBLIC_URL + "/"}>
+                      <Home />
+                    </Route>
+                    <Route exact path={process.env.PUBLIC_URL + "/generators/picker"}>
+                      <RandomPicker />
+                    </Route> 
+                    
+                  </Switch>
+                </div>  
+              </header> 
+            </div>
+          </Router>
+
+    </React.StrictMode>
+    
   )
 }
 

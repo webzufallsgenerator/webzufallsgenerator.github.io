@@ -4,14 +4,13 @@ import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import { ArrowForwardIos } from '@material-ui/icons';
 import { withRouter } from 'react-router-dom'
-
+import Hidden from '@material-ui/core/Hidden';
 
 function Form(props) {
     
-
-    return(
+    const textfield = (
         <div>
-            <form onSubmit={props.handleSubmit}>
+           <Hidden smUp implementation="css">
                 <TextField 
                     multiline id="outlined-textarea"
                     label="Names/Items"
@@ -19,15 +18,54 @@ function Form(props) {
                     variant="outlined" 
                     value={props.data.names} 
                     onChange={props.handleChange}
-                    
-                    style = {{width: 500}}
-                    />
+                    style = {{width: 300} }
+                />
+            </Hidden>
+            <Hidden xsDown implementation="css">
+                <TextField 
+                    multiline id="outlined-textarea"
+                    label="Names/Items"
+                    placeholder="Enter all the names/items here" 
+                    variant="outlined" 
+                    value={props.data.names} 
+                    onChange={props.handleChange}
+                    style = {{width: 400} }
+                />
+            </Hidden> 
+        </div>
+    )
+
+    const buttons = (
+        <div>
+            <Hidden smUp implementation="css">
+               <div style={{display:"inline"}}>
+                    <Button onClick={props.handleClick} variant="contained" color="primary" endIcon={<ArrowForwardIos />} size="small" >
+                        Clear form
+                    </Button>
+                    <Button style={{marginLeft: 10}} type= "submit" variant="contained" color="primary" endIcon={<ArrowForwardIos />} size="small">
+                        Pick random
+                    </Button>
+                </div> 
+            </Hidden>
+            <Hidden xsDown implementation="css">
+               <div style={{display:"inline"}}>
+                    <Button onClick={props.handleClick} variant="contained" color="primary" endIcon={<ArrowForwardIos />} >
+                        Clear form
+                    </Button>
+                    <Button style={{marginLeft: 50}} type= "submit" variant="contained" color="primary" endIcon={<ArrowForwardIos />}>
+                        Pick random
+                    </Button>
+                </div> 
+            </Hidden>
+        </div>
+    )
+
+    return(
+        <div>
+            <form onSubmit={props.handleSubmit}>
+                {textfield}
                 <br/>
-                <br/>
-                <Button type= "submit" variant="contained" color="primary" endIcon={<ArrowForwardIos />}>
-                    Pick random
-                </Button>
-                
+                {buttons}
             </form>
         </div>
     )
