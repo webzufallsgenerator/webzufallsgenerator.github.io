@@ -22,9 +22,6 @@ class RandomNumber extends Component {
         this.setState({
             [event.target.name]: value
         })
-        console.log(this.state.minimum)
-        console.log(this.state.maximum)
-
     }
 
     handleSubmit() {
@@ -34,7 +31,6 @@ class RandomNumber extends Component {
             localStorage.setItem("minimum", minimum)
             localStorage.setItem("maximum", maximum)
             const randomNum1 = Number(Math.floor(Math.random()*(maximum-minimum + 1)))
-            console.log(randomNum1)
             const randomNum2 = randomNum1 + minimum
             localStorage.setItem("randomNum", randomNum2)
             window.location.reload()
