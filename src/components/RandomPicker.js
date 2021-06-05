@@ -1,9 +1,6 @@
 import '../App.css';
 import { Component } from 'react';
-import Form from './Form'
-
-
-
+import PickerForm from './PickerForm'
 
 class RandomPicker extends Component {
   constructor(props) {
@@ -86,7 +83,7 @@ class RandomPicker extends Component {
             <h1>Random Picker</h1>
             <h3>Enter all the names or items and pick a random one!</h3>
             <h4>Press enter after every entry!</h4>
-            <Form 
+            <PickerForm 
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 handleClick={this.clearForm}

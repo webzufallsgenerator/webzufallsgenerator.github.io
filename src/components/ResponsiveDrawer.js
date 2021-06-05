@@ -80,7 +80,7 @@ function ResponsiveDrawer(props) {
           {
             text: "Random Picker",
             onClick: () => {
-                history.push('/generators/picker')
+                history.push('/generators/item_picker')
                 // setOpen(false)
                 setMobileOpen(false)
             }
@@ -91,6 +91,13 @@ function ResponsiveDrawer(props) {
                 history.push('/generators/groups')
                 // setOpen(false)
                 setMobileOpen(false)
+            }
+          },
+          {
+            text: "Random Number",
+            onClick: () => {
+              history.push('/generators/number_picker')
+              setMobileOpen(false)
             }
           },
           {
@@ -130,7 +137,10 @@ function ResponsiveDrawer(props) {
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     <ListItem button key={itemsList[1].secondLayer[0].text} onClick={itemsList[1].secondLayer[0].onClick}>
-                        <ListItemText inset primary={itemsList[1].secondLayer[0].text} />
+                      <ListItemText inset primary={itemsList[1].secondLayer[0].text} />
+                    </ListItem>
+                    <ListItem button key={itemsList[1].secondLayer[2].text} onClick={itemsList[1].secondLayer[2].onClick}>
+                      <ListItemText inset primary={itemsList[1].secondLayer[2].text} />
                     </ListItem>
                     { /* <ListItem button key={itemsList[1].secondLayer[1].text} onClick={itemsList[1].secondLayer[1].onClick}>
                         <ListItemText inset primary={itemsList[1].secondLayer[1].text} />
@@ -164,7 +174,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h5" noWrap>
-            random-now.com
+            random-now
           </Typography>
         </Toolbar>
       </AppBar>

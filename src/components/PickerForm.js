@@ -6,7 +6,7 @@ import { ArrowForwardIos } from '@material-ui/icons';
 import { withRouter } from 'react-router-dom'
 import Hidden from '@material-ui/core/Hidden';
 
-function Form(props) {
+function PickerForm(props) {
     
     const textfield = (
         <div>
@@ -71,4 +71,4 @@ function Form(props) {
     )
 }
 
-export default withRouter(Form)
+export default withRouter(PickerForm)

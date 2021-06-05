@@ -5,7 +5,7 @@ import ResponsiveDrawer from './components/ResponsiveDrawer';
 import RandomPicker from './components/RandomPicker';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
-
+import RandomNumber from './components/RandomNumber'
 
 const drawerWidth = 240
 
@@ -35,10 +35,12 @@ function App() {
                     <Route exact path={process.env.PUBLIC_URL + "/"}>
                       <Home />
                     </Route>
-                    <Route exact path={process.env.PUBLIC_URL + "/generators/picker"}>
+                    <Route exact path={process.env.PUBLIC_URL + "/generators/item_picker"}>
                       <RandomPicker />
                     </Route> 
-                    
+                    <Route exact path={process.env.PUBLIC_URL + "/generators/number_picker"}>
+                      <RandomNumber />
+                    </Route>
                   </Switch>
                 </div>  
               </header> 
