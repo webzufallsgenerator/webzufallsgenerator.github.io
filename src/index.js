@@ -5,11 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4704533423381367"
-     crossorigin="anonymous">
-  </script>
-  </head>
   <React.StrictMode>
     <App />
   </React.StrictMode>,
